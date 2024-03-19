@@ -1,0 +1,32 @@
+.grid-box {
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  background-color: lavender;
+  align-content: center;
+  padding: 5px;
+
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: contain;
+}

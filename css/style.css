@@ -1,0 +1,194 @@
+body {
+  overflow-x: hidden;
+  background: #efefef;
+  overflow-y: auto;
+}
+
+header {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  z-index: 150;
+  left: 5em;
+}
+
+#nombre {
+  position: absolute;
+  z-index: 160;
+  width: 60em;
+  left: 30em;
+  overflow: hidden;
+  height: 10em;
+}
+
+#gh {
+  z-index: 160;
+  position: absolute;
+  object-fit: cover;
+  top: -6.2em;
+  width: 80%;
+  height: auto;
+
+}
+
+#CV {
+  width: 150px;
+}
+
+#head1 {
+  background: #0078f1;
+  width: 25em;
+  height: 10em;
+  position: absolute;
+  border-radius: 50em;
+  left: -5em;
+}
+
+#head2 {
+  background: #0078f1;
+  width: 100%;
+  height: 6.5em;
+  position: absolute;
+}
+
+#curvag {
+  background: gray;
+  border-radius: 50em;
+  width: 95%;
+  height: 4.7em;
+  position: absolute;
+  z-index: 200;
+  right: -14.7em;
+  top: 5.3em;
+}
+
+#navc {
+  position: relative;
+  background: #d3d3d3;
+  width: 100%;
+  height: 10em;
+  z-index: -1;
+  box-shadow: 0 10px 10px -10px gray;
+}
+
+#nav {
+  width: 75%;
+  height: 4em;
+  position: absolute;
+  z-index: 250;
+  top: 5.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 2em;
+}
+
+.boton {
+
+  text-align: center;
+  margin: 0 5.5em;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-shadow: -1px -1px 1px #606060,
+    1px 1px 1px #a0a0a0;
+  font-size: 1.2em;
+  z-index: 250;
+}
+
+main {
+  position: relative;
+  top: -10em;
+  text-align: center;
+}
+
+#text1 {
+  margin: 0 15em 0 15em;
+}
+
+article{
+  align-content: center;
+}
+
+.contenedor-lista{
+  max-width: 70em;
+  padding: auto;
+  margin: 15em 15em;
+}
+
+.lista{
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+.lista__item{
+  padding: 20px;
+  font-size: 30px;
+  
+}
+
+.tittle{
+  font-size: 70px;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+
+}
+
+#fotoperfil{
+  position:absolute;
+  right: 10em;
+  width: 400px;
+  height: 400px;
+  background-color: pink;
+}
+
+footer {
+  position: relative;
+  top: 30em;
+  background-color: #0055aa;
+  box-shadow: 0 -10px 10px -10px gray;
+}
+
+.footer-container {
+  max-width: 100em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  flex: 1 1 300px;
+  margin-bottom: 20px;
+  margin: 0 5em;
+  color: white;
+  max-width: 30em;
+  max-height: auto;
+  padding: 5px;
+}
+
+.social-media-icons a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+
+  #head1,
+  #head2,
+  #curvag,
+  #navc,
+  #nav {
+    width: 100%;
+  }
+}
