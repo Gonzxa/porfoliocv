@@ -43,44 +43,61 @@
     </header>
 
 
-    <form class="formulario-contacto" action="submit_form.php" method="post">
+    <form class="formulario-contacto" action="correo.php" method="post">
         <div class="campo-formulario">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombreform" name="nombre" required>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombreform" name="nombre" required placeholder="Escribe tu nombre aquí">
         </div>
 
         <div class="campo-formulario">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
-        </div>
-
-        <div class="campo-formulario">
-            <label for="numero">Número de teléfono:</label>
-            <input type="tel" id="numero" name="numero" pattern="[0-9]{10}" required>
-            <small>Formato: 1234567890 (10 dígitos sin espacios ni guiones)</small>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" required placeholder="Escribe tu apellido aquí">
         </div>
 
         <div class="campo-formulario">
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required placeholder="Escribe tu email aquí">
+            <small> Ej: example@email.com</small>
         </div>
 
         <div class="campo-formulario">
-            <label for="titulo">Título/Tema:</label>
-            <input type="text" id="titulo" name="titulo" required>
+            <label for="Asunto">Asunto:</label>
+            <input type="text" id="titulo" name="titulo" required placeholder="Escribe aquí el asunto de tu Email">
         </div>
 
         <div class="campo-formulario">
-            <label for="texto">Texto:</label>
-            <textarea id="texto" name="texto" rows="5" required></textarea>
+            <label for="texto">Mensaje:</label>
+            <textarea id="texto" name="texto" rows="5" required placeholder="Escribe aquí tu mensaje"></textarea>
         </div>
 
         <div class="campo-formulario">
-            <button type="submit">Enviar</button>
+            <button type="submit" id="enviar">Enviar</button>
         </div>
     </form>
+    
+    <?php
+    include("correo.php")
+    ?>
 
+    <script>
+        var numero = document.getElementById('numero');
+        numero.oninvalid = function (event) {
+            event.target.setCustomValidity('Por favor, ingresa tu número de teléfono con el código de área.');
+        }
+        numero.oninput = function (event) {
+            event.target.setCustomValidity('');
+        }
+    </script>
 
+    <script>
+        var email = document.getElementById('email');
+        email.oninvalid = function (event) {
+            event.target.setCustomValidity('Por favor, ingresa tu correo electrónico en el formato correcto.');
+        }
+        email.oninput = function (event) {
+            event.target.setCustomValidity('');
+        }
+    </script>
 
 
 

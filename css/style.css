@@ -137,17 +137,35 @@ article{
 
 }
 
-#fotoperfil{
+.textcuali{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: -7em;
+  margin-left: 15em;
+  margin-right: 15em;
+  font-size: 23px;
+  border-radius: 10px;
+  background-color: #0078f1;
+  padding: 30px;
+  box-shadow: 0 -10px 10px -10px gray;
+  color:white;
+  border: 2px black ;
+}
+
+#fotoperf{
   position:absolute;
-  right: 10em;
-  width: 400px;
-  height: 400px;
-  background-color: pink;
+  right: 1em;
+  width: 250px;
+  height: 250px;
+  border-radius: 25em;
+  border-color: black;
 }
 
 footer {
   position: relative;
-  top: 30em;
+  top: 15em;
   background-color: #0055aa;
   box-shadow: 0 -10px 10px -10px gray;
 }
@@ -179,6 +197,7 @@ footer {
 .footer-bottom {
   text-align: center;
 }
+
 
 
 /* Estilos para pantallas pequeñas */
