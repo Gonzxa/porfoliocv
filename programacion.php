@@ -35,14 +35,19 @@
         <div id="curvag"></div>
         <div id="navc"></div>
         <div id="nav">
-            <a href="index.html" id="home" class="boton">HOME</a>
-            <a href="programacion.html" id="diseno" class="boton">PROGRAMACIÓN</a>
-            <a href="diseño.html" id="progr" class="boton">DISEÑO</a>
-            <a href="otros.html" id="otros" class="boton">OTROS</a>
+            <a href="index.php" id="home" class="boton">HOME</a>
+            <a href="programacion.php" id="diseno" class="boton">PROGRAMACIÓN</a>
+            <a href="diseño.php" id="progr" class="boton">DISEÑO</a>
+            <a href="otros.php" id="otros" class="boton">OTROS</a>
         </div>
     </header>
 
 
+<div class="textoprogramacion">
+    <h5 class="tituloprogramacion"> Formulario PHP </h5>
+    <p class="parrafoprogramacion">El formulario envia un Email a la cuenta que quieras Utilizando SMTPSecure: 
+        (Aún se encuentra en desarrollo)</p>
+</div>
     <form class="formulario-contacto" method="post">
         <div class="campo-formulario">
             <label for="nombre">Nombre</label>
@@ -74,10 +79,10 @@
             <button type="submit" id="enviar">Enviar</button>
         </div>
     </form>
-    
+
     <?php
-    include("correo.php")
-    ?>
+    include ("correo.php")
+        ?>
 
     <script>
         var numero = document.getElementById('numero');
@@ -98,10 +103,95 @@
             event.target.setCustomValidity('');
         }
     </script>
+<div class="textoprogramacion">
+    <h5 class="tituloprogramacion"> Calculadora JS </h5>
+    <p class="parrafoprogramacion">La calculadora cuenta con operaciones aritmeticas y trigonometricas, se encuentra realizada con scripts de Java Script y cuenta con un botón para intercalar entre Radiantes, Gradianes y Decimales </p>
+</div>
+    <div class="calculadora">
+        <h22 id="titulocalculadora">Calculadora Básica</h22><br></br>
+        <input type="number" id="numero1" placeholder="Número 1">
+        <input type="number" id="numero2" placeholder="Número 2">
+        <div class="grid-container">
+            <button onclick="calcular('sumar')" class="grid-item">Sumar</button>
+            <button onclick="calcular('restar')" class="grid-item">Restar</button>
+            <button onclick="calcular('multiplicar')" class="grid-item">Multiplicar</button>
+            <button onclick="calcular('dividir')" class="grid-item">Dividir</button>
+            <button onclick="calcular('seno')" class="grid-item">Seno</button>
+            <button onclick="calcular('coseno')" class="grid-item">Coseno</button>
+            <button onclick="calcular('tangente')" class="grid-item">Tangente</button>
+            <button onclick="calcular('logaritmo')" class="grid-item">Logaritmo</button>
+            <button id="modo" onclick="cambiarModo()" class="grid-item" style="background-color: #ADD8E6;">Modo Gradianes</button>
+        </div>
+        <h5 id="resultado">Resultado: </h5>
+    </div>
 
+    <script>
+        var modoCalculadora = 0;
 
+        function sumar(a, b) { return a + b; }
+        function restar(a, b) { return a - b; }
+        function multiplicar(a, b) { return a * b; }
+        function dividir(a, b) {
+            if (b === 0) {
+                alert("Error: División por cero.");
+                return 0;
+            }
+            return a / b;
+        }
+        function seno(a) {return Math.sin(modoCalculadora==2 ? a * (Math.PI / 180) : a );}
+        function coseno(a) { return Math.cos( modoCalculadora==2 ? a * (Math.PI / 180) : a ); }
+        function tangente(a) { return Math.tan(modoCalculadora==2 ? a * (Math.PI / 180) : a ); }
+        function logaritmo(a) { return Math.log(a); }
 
+        function calcular(operacion) {
+            var numero1 = parseFloat(document.getElementById('numero1').value);
+            var numero2 = parseFloat(document.getElementById('numero2').value);
+            var resultado;
+            switch (operacion) {
+                case 'sumar': resultado = sumar(numero1, numero2); break;
+                case 'restar': resultado = restar(numero1, numero2); break;
+                case 'multiplicar': resultado = multiplicar(numero1, numero2); break;
+                case 'dividir': resultado = dividir(numero1, numero2); break;
+                case 'seno': resultado = seno(numero1); break;
+                case 'coseno': resultado = coseno(numero1); break;
+                case 'tangente': resultado = tangente(numero1); break;
+                case 'logaritmo': resultado = logaritmo(numero1); break;
+                default: alert("Operación no válida"); return;
+            }
 
+            if(modoCalculadora==0){
+                document.getElementById('resultado').innerText = 'Resultado: ' + resultado + '°';
+                
+            }
+            
+            else{
+                document.getElementById('resultado').innerText = 'Resultado: ' + resultado;
+        }
+        }
+
+        function cambiarModo() {
+    var botonModo = document.getElementById('modo');
+
+    if(modoCalculadora == 0){
+        botonModo.innerText = 'Modo Decimal';
+        botonModo.style.backgroundColor = '#ccc';
+    }
+    else if(modoCalculadora == 1){
+        botonModo.innerText = 'Modo Radianes';
+        botonModo.style.backgroundColor = '#90EE90';
+    }
+    else if(modoCalculadora == 2){
+        botonModo.innerText = 'Modo Gradianes';
+        botonModo.style.backgroundColor= '#ADD8E6';
+    }
+    
+    modoCalculadora ++;
+
+    if (modoCalculadora>2) {
+        modoCalculadora = 0;
+    }
+}
+    </script>
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -125,7 +215,7 @@
                 <h4>Redirect</h4>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="programacion.html">PROGRAMACIÓNs</a></li>
+                    <li><a href="programacion.php">PROGRAMACIÓN</a></li>
                     <li><a href="diseño.html">DISEÑO</a></li>
                     <li><a href="otros.html">OTRO</a></li>
                 </ul>

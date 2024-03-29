@@ -1,3 +1,4 @@
+@media screen and (min-width: 1024px) {
 body {
   overflow-x: hidden;
   background: #efefef;
@@ -197,17 +198,204 @@ footer {
 .footer-bottom {
   text-align: center;
 }
+}
 
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-x: auto;
+    background: #efefef;
+    overflow-y: auto;
+  }
 
+  header {
+    position: relative;
+  }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 600px) {
+  .logo {
+    position: static;
+    z-index: 150;
+    left: 1em;
+  }
 
-  #head1,
-  #head2,
-  #curvag,
-  #navc,
+  #nombre {
+    position: static;
+    z-index: 160;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+    height: auto;
+  }
+
+  #gh {
+    z-index: 160;
+    position: static;
+    object-fit: cover;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  #CV {
+    width: 50px;
+  }
+
+  #head1 {
+    background: #0078f1;
+    width: 100%;
+    height: 5em;
+    position: static;
+    border-radius: 0;
+    left: 0;
+  }
+
+  #head2 {
+    background: #0078f1;
+    width: 100%;
+    height: 3em;
+    position: static;
+  }
+
+  #curvag {
+    background: gray;
+    border-radius: 0;
+    width: 100%;
+    height: 2em;
+    position: static;
+    z-index: 200;
+    right: 0;
+    top: 2.5em;
+  }
+
+  #navc {
+    position: static;
+    background: #d3d3d3;
+    width: 100%;
+    height: 5em;
+    z-index: -1;
+    box-shadow: 0 5px 5px -5px gray;
+  }
+
   #nav {
     width: 100%;
+    height: 2em;
+    position: static;
+    z-index: 250;
+    top: 2.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    right: 0;
+  }
+
+  .boton {
+    text-align: center;
+    margin: 0 5%; 
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    text-shadow: -1px -1px 1px #606060,
+    1px 1px 1px #a0a0a0;
+    font-size: 0.6em;
+    z-index: 250;
+}
+
+  main {
+    position: static;
+    top: 0;
+    text-align: center;
+  }
+
+  #text1 {
+    margin: 0 1em 0 1em;
+  }
+
+  article{
+    align-content: center;
+  }
+
+  .contenedor-lista{
+    max-width: 35em;
+    padding: auto;
+    margin: 7.5em 7.5em;
+  }
+
+  .lista{
+    flex: 1 1 150px;
+    padding: 10px;
+  }
+
+  .lista__item{
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .tittle{
+    font-size: 35px;
+    border-bottom: 1px solid black;
+    padding-bottom: 2.5px;
+  }
+
+  .textcuali{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: -3.5em;
+    margin-left: 7.5em;
+    margin-right: 7.5em;
+    font-size: 11.5px;
+    border-radius: 5px;
+    background-color: #0078f1;
+    padding: 15px;
+    box-shadow: 0 -5px 5px -5px gray;
+    color:white;
+    border: 1px black ;
+  }
+
+  #fotoperf{
+    position:absolute;
+    right: 0.5em;
+    width: 125px;
+    height: 125px;
+    border-radius: 12.5em;
+    border-color: black;
+  }
+
+  footer {
+    position: relative;
+    top: 7.5em;
+    background-color: #0055aa;
+    box-shadow: 0 -5px 5px -5px gray;
+  }
+
+  .footer-container {
+    max-width: 50em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-content {
+    flex: 1 1 150px;
+    margin-bottom: 10px;
+    margin: 0 2.5em;
+    color: white;
+    max-width: 15em;
+    max-height: auto;
+    padding: 2.5px;
+  }
+
+  .social-media-icons a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer-bottom {
+    text-align: center;
   }
 }
+
+
